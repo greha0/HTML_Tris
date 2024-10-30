@@ -1,0 +1,29 @@
+/*
+
+PALETTE
+
+YInMn Blue #355070
+Chinese Violet #6D597A
+China Rose #B56576
+Light Coral #E56B6F
+Buff #EAAC8B
+
+*/
+
+.cont-page{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color: #355070;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.cont-game-table{
+    position: relative;
+    background-color: #B56576;
+    border: 0.5svb solid #6D597A;
+    width: 70dvb;
+    height: 70dvb;
+}
