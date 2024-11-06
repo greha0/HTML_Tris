@@ -1,29 +1,143 @@
-/*
 
-PALETTE
+@import url('https://fonts.cdnfonts.com/css/bradley-hand-2');
 
-YInMn Blue #355070
-Chinese Violet #6D597A
-China Rose #B56576
-Light Coral #E56B6F
-Buff #EAAC8B
-
-*/
-
+body{
+    background-color:bbdefb;
+}
 .cont-page{
     display: flex;
     justify-content: center;
     align-items:center;
-    background-color: #355070;
-    width: 100%;
+    margin: 0 auto;
+    
+    width: 180dvb;
+    height: 95dvb;
+}
+
+/* Game table */
+.cont-game-table{
+    position: absolute;
+    width: 75dvb;
+    height: 75dvb;
+}
+
+.cont-table-line{
+    display: flex;
+}
+
+.cont-game-cell{
+    background-color: #64b5f6;
+    border: 0.1dvb solid #bbdefb;
+    width: 25dvb;
+    height: 25dvb;
+}
+
+/* Info table */
+
+.cont-player1{
+    position: relative;
+    right: 55dvb;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 30dvb;
     height: 100%;
+    z-index: 1;
+}
+
+.cont-player2{
+    justify-content: center;
+    position: relative;
+    left: 55dvb;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 30dvb;
+    height: 100%;
+    z-index: 1;
+}
+
+.cont-player-name{
+    
+    margin-top: 10dvb;
+    width: 80%;
+    border-bottom: 0.1dvb solid #0d47a1;
+    padding: 2dvb;
+    font-weight: 700;
+    font-size:4.5dvb;
+    font-weight: 900;
+    color: #0d47a1;
+    height: 5dvb;
+    z-index: 2;
     
 }
 
-.cont-game-table{
-    position: relative;
-    background-color: #B56576;
-    border: 0.5svb solid #6D597A;
-    width: 70dvb;
-    height: 70dvb;
+.cont-wins{
+    width: 100%;
+    
+    font-weight: 700;
+    font-size:4.5dvb;
+    padding: 1dvb;
+    color: #1976d2;
+    height: 5dvb;
+    margin-top: 1dvb;
+    z-index: 2;
+}
+
+.cont-losts{
+    width: 100%;
+    border-bottom: 0.1dvb solid #0d47a1;
+    font-weight: 700;
+    margin-top: 1dvb;
+    font-size:4.5dvb;
+    color: #1976d2;
+    padding: 1dvb;
+    height: 5dvb;
+    z-index: 2;
+}
+
+.cont-tie{
+    width: 100%;
+    border-bottom: 0.1dvb solid #0d47a1;
+    font-weight: 700;
+    margin-top: 1dvb;
+    font-size:4.5dvb;
+    color: #1976d2;
+    padding: 1dvb;
+    height: 5dvb;
+    z-index: 2;
+}
+
+/* Cell colors */
+
+#cell1{
+    background-color: #0d47a1;
+}
+
+#cell2{
+    background-color: #1565c0;
+}
+
+#cell3{
+    background-color: #1976d2;
+}
+
+#cell4{
+    background-color: #1565c0;
+}
+
+#cell5{
+    background-color: #1976d2;
+}
+
+#cell6{
+    background-color: #2196f3;
+}
+
+#cell7{
+    background-color: #1976d2;
+}
+
+#cell8{
+    background-color: #2196f3;
+}
+
+#cell9{
+    background-color: #64b5f6;
 }
