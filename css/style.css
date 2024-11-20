@@ -26,7 +26,9 @@ body{
 }
 
 .cont-game-cell{
-    background-color: #64b5f6;
+    background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
     border: 0.1dvb solid #bbdefb;
     width: 25dvb;
     height: 25dvb;
@@ -141,3 +143,4 @@ body{
 #cell9{
     background-color: #64b5f6;
 }
+
