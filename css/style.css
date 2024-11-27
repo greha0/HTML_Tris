@@ -144,3 +144,20 @@ body{
     background-color: #64b5f6;
 }
 
+.modal{
+    width: 50dvb;
+    height: 50dvb;
+    background-color:#64b5f6;
+    position: fixed;
+    font-family:Helvetica, Arial, sans-serif;
+    color:#0d47a1;
+    font-weight: bold;
+    border: 0.5dvb solid #1565c0; 
+    font-size: 4.5dvb;
+    text-align: center;
+    padding: 10dvb;
+}
+
+#nomegiocatore{
+    visibility: hidden;
+}

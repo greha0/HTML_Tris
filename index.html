@@ -41,14 +41,16 @@
                     <div class="cont-game-cell" id="mask7" onclick = "segnaPunto(7)"> </div>
                     <div class="cont-game-cell" id="mask8" onclick = "segnaPunto(8)"> </div>
                     <div class="cont-game-cell" id="mask9" onclick = "segnaPunto(9)"> </div>
-                </div>    
+                </div>   
+                <input type="button" value="New Game" onclick="apriModale('nomegiocatore')">
+                <!--<input type="button" value="Dark mode" onclick="setDarkMode()">--> 
             </div>
 			
             <!-- End game table -->
 
             <!-- Game info table -->
             <div class="cont-player1">
-                <div class="cont-player-name">
+                <div class="cont-player-name" id = "namePlayer1">
                     Player 1
                 </div>
                 <div class="cont-wins" id="winsPlayer1"> 
@@ -62,7 +64,7 @@
                 </div>
             </div>
             <div class="cont-player2">
-                <div class="cont-player-name">
+                <div class="cont-player-name" id = "namePlayer2">
                     Player 2
                 </div>
                 <div class="cont-wins" id="winsPlayer2"> 
@@ -74,6 +76,15 @@
                 <div class="cont-tie" id = "tiePlayer2"> 
                     Tie: 0
                 </div>
+            </div>
+            <div class="modal" id="nomegiocatore">
+                <form>
+                    <label> Player 1:</label>
+                    <input type="text" id="name1"> <br> <br>
+                    <label> Player 2:</label>
+                    <input type="text" id="name2"> <br> <br>
+                    <input type="button" value="Enter"  onclick = "setNomi()">
+                </form>
             </div>
         </div>
     </body>

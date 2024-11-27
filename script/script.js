@@ -6,9 +6,11 @@ var persPlayer1 = 0;
 var persPlayer2 = 0;
 var pareggio = 0;
 
+
 function isPari(num){
 	return num % 2 === 0;
 }
+
 
 /**
  * Questa funzione segna il punto sulla tavola di gioco
@@ -17,38 +19,34 @@ function isPari(num){
  */
 
 function segnaPunto(a){
-	if(isPari(turni)){
-		//Player 1
+	if(isVittoria(1) == -1 && isVittoria(2) == -1){
+		if(isPari(turni)){
+			//Player 1
 
-		/* Controllo se qualcuno ha vinto */
-		if(isVittoria(1) == -1 && isVittoria(2) == -1){
-			/* Controllo se è già stata utilizzata quella cella */ 
-			if(document.getElementById("mask" + a).style.backgroundImage != 'url("svg/cross.svg")' && document.getElementById("mask" + a).style.backgroundImage != 'url("svg/circle.svg")'){
-				document.getElementById("mask" + a).style.backgroundImage = 'url("svg/cross.svg")';
-			}
-		} else {
-			alert("gioco finito");
-			resettaTabellone();
-		}
-		
-	}else{
-		//Player 2
-
-		/* Controllo se qualcuno ha vinto */
-		if(isVittoria(1) == -1 && isVittoria(2) == -1){
-			/* Controllo se è già stata utilizzata quella cella */ 
-			if(document.getElementById("mask" + a).style.backgroundImage != 'url("svg/cross.svg")' && document.getElementById("mask" + a).style.backgroundImage != 'url("svg/circle.svg")'){
-				document.getElementById("mask" + a).style.backgroundImage = 'url("svg/circle.svg")';
-			}
+				/* Controllo se è già stata utilizzata quella cella */ 
+				if(document.getElementById("mask" + a).style.backgroundImage != 'url("svg/cross.svg")' && document.getElementById("mask" + a).style.backgroundImage != 'url("svg/circle.svg")'){
+					document.getElementById("mask" + a).style.backgroundImage = 'url("svg/cross.svg")';
+					turni++;
+					
+				}
+				
+			
 		}else{
-			alert("gioco finito");
-			resettaTabellone();
-		}
+			//Player 2
+			
+				/* Controllo se è già stata utilizzata quella cella */ 
+				if(document.getElementById("mask" + a).style.backgroundImage != 'url("svg/cross.svg")' && document.getElementById("mask" + a).style.backgroundImage != 'url("svg/circle.svg")'){
+					document.getElementById("mask" + a).style.backgroundImage = 'url("svg/circle.svg")';
+					turni++;
+			
+				}
+				
+		} 
+	} else {
+		resettaTabellone();
+		stampaPunteggio();
 	}
-
-
-	stampaPunteggio();
-	turni++;
+	
 }
 
 
@@ -131,7 +129,7 @@ function isVittoria(player){
 	}
 
 	/* Controllo pareggio */
-	if(turni == 10){
+	if(turni == 9){
 		pareggio++;
 		turni = 0;
 		return 0;
@@ -158,4 +156,34 @@ function resettaTabellone(){
 	for(i = 1; i < 10; i++){
 		document.getElementById("mask" + i).style.backgroundImage = "none";
 	}
+}
+
+function apriModale(nome){
+	document.getElementById(nome).style.visibility = "visible";
+}
+
+function chiudiModale(nome){
+	document.getElementById(nome).style.visibility = "hidden";
+}
+
+function setNomi(){
+	var player1 = document.getElementById("name1").innerText;
+	var player2 = document.getElementById("name2").innerText;
+
+	document.getElementById("namePlayer1").innerText = document.getElementById("name1").value;
+	document.getElementById("namePlayer2").innerText = player2 = document.getElementById("name2").value;
+
+	vittPlayer1 = 0;
+	vittPlayer2 = 0;
+	persPlayer1 = 0;
+	persPlayer2 = 0;
+	pareggio = 0;
+
+	stampaPunteggio();
+	resettaTabellone();
+	chiudiModale("nomegiocatore");
+}
+
+function setDarkMode(){
+	
 }
