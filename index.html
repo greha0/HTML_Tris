@@ -1,6 +1,14 @@
+<!--
+
+    TIC TAC TOE
+    Made by Greta Maria Brugnatti
+    Class 4AII
+
+-->
+
 <html>
     <head>
-        <link rel="stylesheet" href="css/style.css">
+        <link id="theme" rel="stylesheet" href="css/light.css">
         <title> Tic-Tac-Toe</title>
     </head>
     <body>
@@ -77,15 +85,25 @@
                     Tie: 0
                 </div>
             </div>
+            <!-- End game info table -->
+            <!-- Inserimento del nome dei giocatori -->
             <div class="modal" id="nomegiocatore">
                 <form>
+                    <label> TIC TAC TOE </label> <br> <br> <br>
                     <label> Player 1:</label>
                     <input type="text" id="name1"> <br> <br>
                     <label> Player 2:</label>
                     <input type="text" id="name2"> <br> <br>
-                    <input type="button" value="Enter"  onclick = "setNomi()">
+                    <input type="button" value="Play"  onclick = "setNomi()">
+                    <input type="button" value="Dark Mode" onclick="darkMode()">
                 </form>
             </div>
+            <!-- Fine inserimento del nome dei giocatori -->
+             <!-- Schermata vittoria -->
+             <div class="modal" id="vittory" onclick = "chiudiModale('vittory')">
+                <div class="bunny"> </div>
+                <p id="scrittaVittoria"> Player wins </p>
+             </div>
         </div>
     </body>
 	<script type="text/JavaScript" src="script/script.js"> </script>

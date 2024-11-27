@@ -1,4 +1,8 @@
-
+/*
+TIC TAC TOC
+Greta Maria Brugnatti
+4AII
+*/
 @import url('https://fonts.cdnfonts.com/css/bradley-hand-2');
 
 body{
@@ -145,19 +149,67 @@ body{
 }
 
 .modal{
-    width: 50dvb;
-    height: 50dvb;
-    background-color:#64b5f6;
-    position: fixed;
+    background-color:#bbdefb;
+    position: absolute;
     font-family:Helvetica, Arial, sans-serif;
     color:#0d47a1;
     font-weight: bold;
-    border: 0.5dvb solid #1565c0; 
+    border: 0.5dvb solid white; 
     font-size: 4.5dvb;
     text-align: center;
     padding: 10dvb;
 }
 
 #nomegiocatore{
-    visibility: hidden;
+    visibility: visible;
+    width: 50dvb;
+    height: 50dvb;
+    z-index: 4;
 }
+
+#name1, #name2{
+    width: 20dvb;
+    height: 4.5dvb;
+    font-size: 2dvb;
+    border-radius: 5dvb;
+}
+
+input{
+    width: 20dvb;
+    height: 4.5dvb;
+    background-color:#aad4f7;
+    border:0.2dvb solid white;
+    margin-top: 0.6dvb;
+    font-size: 2dvb;
+    color:#0d47a1;
+}
+
+#vittory{
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.651);
+    z-index: 3;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+}
+
+.bunny{
+    width: 40dvb;
+    height: 40dvb;
+    background-image: url("../gif/bun-cute.gif");
+    background-repeat: no-repeat;
+    background-size:contain;
+    margin-top: 10dvb;
+    margin: 0 auto;
+    
+}
+
+#scrittaVittoria{
+    color: white;
+}
+
+

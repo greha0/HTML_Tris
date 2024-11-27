@@ -1,4 +1,7 @@
-
+/**
+ * TIC TAC TOE
+ * @author Greta Maria Brugnatti
+ */
 var turni = 0;
 var vittPlayer1 = 0;
 var vittPlayer2 = 0;
@@ -56,6 +59,7 @@ function segnaPunto(a){
  * @param player Numero intero che indica giocatore uno o giocatore due
  * @return -1 se non ha vinto nessuno, 1 se ha vinto il giocatore 1 e 2 se ha vinto il giocatore 2, 0 pareggio
  */
+
 function isVittoria(player){
 	var i = 0;
 	if(player == 1){
@@ -65,6 +69,8 @@ function isVittoria(player){
 			if(document.getElementById("mask" + (1+(i*3))).style.backgroundImage == 'url("svg/cross.svg")' && document.getElementById("mask" + (2+(i*3))).style.backgroundImage == 'url("svg/cross.svg")' && document.getElementById("mask" + (3+(i*3))).style.backgroundImage == 'url("svg/cross.svg")'){
 				vittPlayer1++;
 				persPlayer2++;
+				turni = 0;
+				winTheme(document.getElementById("namePlayer1").innerText);
 				return 1;
 			}
 		}
@@ -75,6 +81,8 @@ function isVittoria(player){
 			if(document.getElementById("mask" + (1+i)).style.backgroundImage == 'url("svg/cross.svg")' && document.getElementById("mask" + (4+i)).style.backgroundImage == 'url("svg/cross.svg")' && document.getElementById("mask" + (7+i)).style.backgroundImage == 'url("svg/cross.svg")'){
 				vittPlayer1++;
 				persPlayer2++;
+				turni = 0;
+				winTheme(document.getElementById("namePlayer1").innerText);
 				return 1;
 			}
 		}
@@ -83,6 +91,8 @@ function isVittoria(player){
 		if(document.getElementById("mask" + 1).style.backgroundImage == 'url("svg/cross.svg")' && document.getElementById("mask" + 5).style.backgroundImage == 'url("svg/cross.svg")' && document.getElementById("mask" + 9).style.backgroundImage == 'url("svg/cross.svg")'){
 			vittPlayer1++;
 			persPlayer2++;
+			turni = 0;
+			winTheme(document.getElementById("namePlayer1").innerText);
 
 			return 1;
 		}
@@ -90,6 +100,8 @@ function isVittoria(player){
 		if(document.getElementById("mask" + 3).style.backgroundImage == 'url("svg/cross.svg")' && document.getElementById("mask" + 5).style.backgroundImage == 'url("svg/cross.svg")' && document.getElementById("mask" + 7).style.backgroundImage == 'url("svg/cross.svg")'){
 			vittPlayer1++;
 			persPlayer2++;
+			turni = 0;
+			winTheme(document.getElementById("namePlayer1").innerText);
 
 			return 1;
 		}
@@ -100,6 +112,8 @@ function isVittoria(player){
 			if(document.getElementById("mask" + (1+(i*3))).style.backgroundImage == 'url("svg/circle.svg")' && document.getElementById("mask" + (2+(i*3))).style.backgroundImage == 'url("svg/circle.svg")' && document.getElementById("mask" + (3+(i*3))).style.backgroundImage == 'url("svg/circle.svg")'){
 				vittPlayer2++;
 				persPlayer1++;
+				turni = 0;
+				winTheme(document.getElementById("namePlayer2").innerText);
 				return 2;
 			}
 		}
@@ -110,6 +124,8 @@ function isVittoria(player){
 			if(document.getElementById("mask" + (1+i)).style.backgroundImage == 'url("svg/circle.svg")' && document.getElementById("mask" + (4+i)).style.backgroundImage == 'url("svg/circle.svg")' && document.getElementById("mask" + (7+i)).style.backgroundImage == 'url("svg/circle.svg")'){
 				vittPlayer2++;
 				persPlayer1++;
+				turni = 0;
+				winTheme(document.getElementById("namePlayer2").innerText);
 				return 2;
 			}
 		}
@@ -118,12 +134,16 @@ function isVittoria(player){
 		if(document.getElementById("mask" + 1).style.backgroundImage == 'url("svg/circle.svg")' && document.getElementById("mask" + 5).style.backgroundImage == 'url("svg/circle.svg")' && document.getElementById("mask" + 9).style.backgroundImage == 'url("svg/circle.svg")'){
 			vittPlayer2++;
 			persPlayer1++;
+			turni = 0;
+			winTheme(document.getElementById("namePlayer2").innerText);
 			return 2;
 		}
 
 		if(document.getElementById("mask" + 3).style.backgroundImage == 'url("svg/circle.svg")' && document.getElementById("mask" + 5).style.backgroundImage == 'url("svg/circle.svg")' && document.getElementById("mask" + 7).style.backgroundImage == 'url("svg/circle.svg")'){
 			vittPlayer2++;
 			persPlayer1++;
+			turni = 0;
+			winTheme(document.getElementById("namePlayer2").innerText);
 			return 2;
 		}
 	}
@@ -132,6 +152,7 @@ function isVittoria(player){
 	if(turni == 9){
 		pareggio++;
 		turni = 0;
+		tieTheme();
 		return 0;
 	}
 
@@ -150,6 +171,9 @@ function stampaPunteggio(){
 	document.getElementById("tiePlayer2").innerText = "Tie: " + pareggio;
 }
 
+/**
+ * Funzione che resetta il campo di gioco
+ */
 function resettaTabellone(){
 	var i=0;
 	turni = 0;
@@ -158,32 +182,78 @@ function resettaTabellone(){
 	}
 }
 
+/**
+ * Funzione che apre la modale dato il nome dell'ID
+ * @param nome ID modale
+ */
 function apriModale(nome){
 	document.getElementById(nome).style.visibility = "visible";
+	document.getElementById("vittory").style.visibility="visible";
 }
 
+
+/**
+ * Funzione che chiude la modale dato il nome dell'ID
+ * @param nome ID modale
+ */
 function chiudiModale(nome){
 	document.getElementById(nome).style.visibility = "hidden";
+	document.getElementById("vittory").style.visibility="hidden";
 }
 
+/**
+ * Funzione che imposta i nomi dei giocatori
+ */
 function setNomi(){
-	var player1 = document.getElementById("name1").innerText;
-	var player2 = document.getElementById("name2").innerText;
+	var nome1 = document.getElementById("name1").value;
+	var nome2 = document.getElementById("name2").value;
 
-	document.getElementById("namePlayer1").innerText = document.getElementById("name1").value;
-	document.getElementById("namePlayer2").innerText = player2 = document.getElementById("name2").value;
+	if(nome1 == "" || nome2 ==""){
+		alert("Enter players names");
+		return;
+	}else{
+		document.getElementById("namePlayer1").innerText = nome1;
+		document.getElementById("namePlayer2").innerText = nome2;
+		/* Azzera  i punti dei giocatori */
+		vittPlayer1 = 0;
+		vittPlayer2 = 0;
+		persPlayer1 = 0;
+		persPlayer2 = 0;
+		pareggio = 0;
 
-	vittPlayer1 = 0;
-	vittPlayer2 = 0;
-	persPlayer1 = 0;
-	persPlayer2 = 0;
-	pareggio = 0;
+		stampaPunteggio();
+		resettaTabellone();
+		chiudiModale("nomegiocatore");
+		chiudiModale("vittory");
+	}
 
-	stampaPunteggio();
-	resettaTabellone();
-	chiudiModale("nomegiocatore");
 }
 
-function setDarkMode(){
-	
+/**
+ * Funzione che visualizza la schermata di vittoria
+ * @param nome Nome del giocatore che ha vinto
+ */
+
+function winTheme(nome){
+	apriModale("vittory");
+	document.getElementById("scrittaVittoria").innerText = nome + " wins";
+}
+
+/**
+ * Funzione che visualizza la schermata di pareggio
+ */
+function tieTheme(){
+	apriModale("vittory");
+	document.getElementById("scrittaVittoria").innerText = "Tie";
+}
+
+function darkMode(){
+	let theme = document.getElementById('theme');
+
+	if (theme.getAttribute('href') == 'css/light.css') {
+		theme.setAttribute('href', 'css/dark.css');
+	} else {
+		theme.setAttribute('href', 'css/light.css');
+	}
+
 }

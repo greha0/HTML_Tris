@@ -1,0 +1,215 @@
+/*
+TIC TAC TOC
+Greta Maria Brugnatti
+4AII
+*/
+@import url('https://fonts.cdnfonts.com/css/bradley-hand-2');
+
+body{
+    background-color:#1D2D44;
+}
+.cont-page{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin: 0 auto;
+    
+    width: 180dvb;
+    height: 95dvb;
+}
+
+/* Game table */
+.cont-game-table{
+    position: absolute;
+    width: 75dvb;
+    height: 75dvb;
+}
+
+.cont-table-line{
+    display: flex;
+}
+
+.cont-game-cell{
+    background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
+    border: 0.1dvb solid #748CAB;
+    width: 25dvb;
+    height: 25dvb;
+}
+
+/* Info table */
+
+.cont-player1{
+    position: relative;
+    right: 55dvb;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 30dvb;
+    height: 100%;
+    z-index: 1;
+}
+
+.cont-player2{
+    justify-content: center;
+    position: relative;
+    left: 55dvb;
+    font-family: Helvetica, Arial, sans-serif;
+    width: 30dvb;
+    height: 100%;
+    z-index: 1;
+}
+
+.cont-player-name{
+    
+    margin-top: 10dvb;
+    width: 80%;
+    border-bottom: 0.1dvb solid #748CAB;
+    padding: 2dvb;
+    font-weight: 700;
+    font-size:4.5dvb;
+    font-weight: 900;
+    color: #748CAB;
+    height: 5dvb;
+    z-index: 2;
+    
+}
+
+.cont-wins{
+    width: 100%;
+    
+    font-weight: 700;
+    font-size:4.5dvb;
+    padding: 1dvb;
+    color: #748CAB;
+    height: 5dvb;
+    margin-top: 1dvb;
+    z-index: 2;
+}
+
+.cont-losts{
+    width: 100%;
+    border-bottom: 0.1dvb solid #748CAB;
+    font-weight: 700;
+    margin-top: 1dvb;
+    font-size:4.5dvb;
+    color: #748CAB;
+    padding: 1dvb;
+    height: 5dvb;
+    z-index: 2;
+}
+
+.cont-tie{
+    width: 100%;
+    border-bottom: 0.1dvb solid #748CAB;
+    font-weight: 700;
+    margin-top: 1dvb;
+    font-size:4.5dvb;
+    color: #748CAB;
+    padding: 1dvb;
+    height: 5dvb;
+    z-index: 2;
+}
+
+/* Cell colors */
+
+#cell1{
+    background-color: #0d48a177;
+}
+
+#cell2{
+    background-color: #1565c075;
+}
+
+#cell3{
+    background-color: #1976d27e;
+}
+
+#cell4{
+    background-color: #1565c073;
+}
+
+#cell5{
+    background-color: #1976d277;
+}
+
+#cell6{
+    background-color: #2195f37e;
+}
+
+#cell7{
+    background-color: #1976d283;
+}
+
+#cell8{
+    background-color: #2195f381;
+}
+
+#cell9{
+    background-color: #64b4f680;
+}
+
+.modal{
+    background-color:#1D2D44;
+    position: absolute;
+    font-family:Helvetica, Arial, sans-serif;
+    color:#748CAB;
+    font-weight: bold;
+    border: 0.5dvb solid #748CAB; 
+    font-size: 4.5dvb;
+    text-align: center;
+    padding: 10dvb;
+}
+
+#nomegiocatore{
+    visibility: visible;
+    width: 50dvb;
+    height: 50dvb;
+    z-index: 4;
+}
+
+#name1, #name2{
+    width: 20dvb;
+    height: 4.5dvb;
+    font-size: 2dvb;
+    border-radius: 5dvb;
+}
+
+input{
+    width: 20dvb;
+    height: 4.5dvb;
+    background-color:#aad4f7;
+    border:0.2dvb solid #748CAB;
+    margin-top: 0.6dvb;
+    font-size: 2dvb;
+    color:#3E5C76;
+}
+
+#vittory{
+    visibility: visible;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.651);
+    z-index: 3;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    
+}
+
+.bunny{
+    width: 40dvb;
+    height: 40dvb;
+    background-image: url("../gif/bun-cute.gif");
+    background-repeat: no-repeat;
+    background-size:contain;
+    margin-top: 10dvb;
+    margin: 0 auto;
+    
+}
+
+#scrittaVittoria{
+    color: #748CAB;
+}
+
+
